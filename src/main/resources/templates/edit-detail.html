@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http//www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit Employee Details</title>
+
+</head>
+<body>
+	<section>
+
+		<nav class="navbar"
+			style="background: linear-gradient(to bottom, #6666ff 15%, #ffff66 110%); height: 20%;">
+			<div>
+				<span class="navbar-brand mb-0 h1"><h2
+						style="color: #1d1d69; padding: 5px;">Edit Detail</h2></span>
+			</div>
+			<div class="navlink" style="padding: 5px;">
+				<div class="d-flex">
+					<p class="navbar-text">Welcome
+					<p
+						style="padding-left: 17px; padding-right: 10px; font-size: 25px;"
+						th:text="${managerName}">
+					<p>
+						! <a th:href="@{/}"><i class="fa fa-times-circle fa-2x"
+							style="color: rgb(145, 10, 10);"></i></a>
+
+					</p>
+				</div>
+			</div>
+			</div>
+
+		</nav>
+
+		<div>
+
+			<fieldset
+				style="height: 61.5%; margin-top: 2%; margin-bottom: 2%; margin-left: 2%; width: 95%; border: 2px solid rgb(212, 210, 210);">
+				<legend>
+					<p
+						style="font-size: 18px; color: #6666ff; width: 170px; margin-top: -20px; margin-left: 5px; background: white;">
+						Edit Employee Detail</p>
+					<div class="container" style="font-size: 15px;">
+						<form th:object="${employeeDetail}" enctype="multipart/form-data"
+							method="POST" th:action="@{/process-edit}">
+							<div class="row justify-content-md-center">
+								<div class="col col-lg-2">
+									<label for="inputCode"><b>Employee Code:</b></label>
+								</div>
+								<div class="col col-md-2 mb-4">
+									<input name="code" type="number"
+										class="form-control form-control-sm"
+										th:value="${employeeDetail.code}" id="inputCode"
+										style="pointer-events: none;" required>
+
+								</div>
+
+								<div class="row justify-content-md-center">
+									<div class="col col-lg-2">
+										<label for="inputName"><b>Employee Name:</b></label>
+
+									</div>
+									<div class="col col-md-2 mb-4">
+										<input name="name" type="text"
+											class="form-control form-control-sm"
+											th:value="${employeeDetail.name}" id="inputName"
+											th:classappend="${#fields.hasErrors('name')?'is-invalid':''}">
+										<div th:each="e : ${#fields.errors('name')}" th:text="${e}"
+											id="validationServer03Feedback" class="invalid-feedback"
+											style="font-size: 13px;"></div>
+									</div>
+								</div>
+								<div class="row justify-content-md-center">
+									<div class="col col-lg-2">
+										<label for="inputLoc"><b>Location:</b></label>
+									</div>
+									<div class="col col-md-2 mb-4">
+										<input name="location" type="text"
+											class="form-control form-control-sm"
+											th:value="${employeeDetail.location}" id="inputLoc" required>
+									</div>
+								</div>
+								<div class="row justify-content-md-center">
+									<div class="col col-lg-2">
+										<label for="inputEmail"><b>Email:</b></label>
+									</div>
+									<div class="col col-md-2 mb-4">
+										<input name="email" type="email"
+											class="form-control form-control-sm"
+											th:value="${employeeDetail.email}" id="inputEmail" required>
+									</div>
+								</div>
+								<div class="row justify-content-md-center">
+									<div class="col col-lg-2">
+										<label for="inputbirthdate"><b>Date of Birth:</b></label>
+									</div>
+									<div class="col col-md-2 mb-4">
+										<input name="birthdate" type="text"
+											class="form-control form-control-sm"
+											th:value="${employeeDetail.birthdate}" id="inputbirthdate"
+											required>
+									</div>
+								</div>
+								<div class="row justify-content-md-center">
+									<div class="col col-lg-2 mb-4 mt-4">
+										<button type="submit"
+											class="btn btn-sm btn-outline-primary text-center"
+											style="color: black;">Save</button>
+									</div>
+									<div class="col col-lg-2 mt-4">
+										<a th:href="@{/details}" role="button"
+											class="btn btn-sm btn-outline-primary text-center"
+											style="color: black;">Cancel</a>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</legend>
+			</fieldset>
+		</div>
+	</section>
+
+</body>
+
+</html>

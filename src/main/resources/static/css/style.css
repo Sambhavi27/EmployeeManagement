@@ -1,0 +1,47 @@
+@charset "ISO-8859-1";
+.navbar{
+	background:linear-gradient(to bottom, #6666ff 15%, #ffff66 110%);
+	height:20%;
+}
+.h2{
+	color:#1d1d69;
+}
+.my-card{
+	margin-left: 20%;
+	margin-right: 20%;
+}
+.box1{
+	height:57.5%;
+	margin-top: 5%;
+	margin-bottom: 5%;
+    border:2px solid rgb(212, 210, 210);
+}
+.inline-header{
+	 color:#6666ff;
+	 width:70px;
+	 margin-top:-20px;
+	 margin-left:5px;
+	 background:white;
+                
+}
+.login-form{
+	padding-left:5% ;
+	padding-top: 5%;
+	padding-bottom: 5%;
+	padding-right: 5%;
+}
+
+span{
+	 background-color:rgb(224, 222, 222);
+}
+#btn-div{
+	padding-bottom: 5%;
+}
+#foot{
+	background: linear-gradient(to bottom, #ffff66 15%, #6666ff 115%); 
+	height: 60px;
+ 	position: fixed;
+  	left: 0; 
+  	bottom: 0; 
+  	width: 100%;
+}

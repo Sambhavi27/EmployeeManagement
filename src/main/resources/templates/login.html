@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http//www.thymeleaf.org" th:replace="base::layout(~{::section})">
+
+<head>
+  <meta charset="ISO-8859-1">
+  <title>Login Page</title>
+</head>
+
+<body>
+  <section>
+    <nav class="navbar">
+      <div>
+        <span class="navbar-brand mb-0 h1">
+          <h2>HR Manager Login</h2>
+        </span>
+      </div>
+    </nav>
+
+    <div class="my-card">
+
+      <fieldset class="box1">
+        <legend>
+          <p class="inline-header">Login</p>
+          <form action="" th:action="@{/validate}" method="GET" th:object="${manager}" class="login-form">
+            <div class="row mb-4">
+              <label for="inputId" class="col-sm-4 col-form-label"><span>User
+                  Id:</span></label>
+              <div class="col-sm-6">
+                <input name="id" type="text" class="form-control" id="inputId"
+                  th:classappend="${#fields.hasErrors('id')?'is-invalid':''}">
+                <div th:each="e : ${#fields.errors('id')}" th:text="${e}" id="validationServer03Feedback"
+                  class="invalid-feedback" style="font-size:13px;">
+                </div>
+              </div>
+
+            </div>
+            <div class="row mb-4">
+              <label for="inputPassword" class="col-sm-4 col-form-label"><span>Password:</span></label>
+              <div class="col-sm-6">
+                <input name="password" type="password" class="form-control" id="inputPassword"
+                  th:classappend="${#fields.hasErrors('password')?'is-invalid':''}">
+                <div th:each="e : ${#fields.errors('password')}" th:text="${e}" id="validationServer03Feedback"
+                  class="invalid-feedback" style="font-size:13px;">
+
+                </div>
+
+              </div>
+            </div>
+            <div class="text-center" id="btn-div">
+              <button type="submit" class="btn btn-lg btn-outline-primary text-center"
+                style="color: black;">Login</button>
+            </div>
+          </form>
+        </legend>
+      </fieldset>
+    </div>
+  </section>
+</body>
+
+</html>
